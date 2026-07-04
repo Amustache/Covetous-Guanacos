@@ -1,0 +1,17 @@
+# Covetous Guanacos
+
+Game made in ~45h for the 2026 Epic Game Jame at Neuchâtel
+
+## Credits
+
+- Placeholders:
+    - "[LPC] Ore and Forge" by bluecarrot16, commissioned by Pierre Vigier (pvigier). CC-BY 3.0+ / GPL 3.0+ / OGA-BY 3.0+: https://opengameart.org/content/lpc-ore-and-forge
+    - "[LPC] Crops" by bluecarrot16, Daniel Eddeland (daneeklu), Joshua Taylor, Richard Kettering (Jetrel). Commissioned by castelonia: https://opengameart.org/content/lpc-crops
+    - "Glitch Alpine Assets" by Tiny Speck, submitted by TheValar. CC0: https://opengameart.org/content/glitch-alpine-assets-png
+    - "LPC style farm animals" by daneeklu. CC-BY 3.0 / GPL 2.0: https://opengameart.org/content/lpc-style-farm-animals
+    - "[LPC] Farming tilesets, magic animations and UI elements" by daneeklu. CC-BY-SA 3.0 / GPL 3.0: https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements
+    - "Winter Birds" by Refuzzle. CC0: https://opengameart.org/content/winter-birds
+
+## AI Disclosure
+
+TODO
