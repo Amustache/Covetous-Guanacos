@@ -2,6 +2,16 @@
 
 Game made in ~45h for the 2026 Epic Game Jame at Neuchâtel
 
+## Setup
+
+Requires Godot v4.6.
+
+**TODO lol**
+
+## License
+
+Otherwise specified, this work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
 ## Credits
 
 - Placeholders:
