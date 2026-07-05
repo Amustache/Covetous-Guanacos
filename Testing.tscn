@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://di1erxa5rpbyi"]
+
+[ext_resource type="Script" uid="uid://bjnjaglylyu47" path="res://testing.gd" id="1_axi3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfraa"]
+size = Vector2(1954, 30)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_axi3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj67a"]
+size = Vector2(627, 26)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kfraa"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_28q7j"]
+
+[node name="Testing" type="Node2D" unique_id=1519118791]
+script = ExtResource("1_axi3y")
+
+[node name="generator" type="Node2D" parent="." unique_id=615240215]
+position = Vector2(42, 380)
+
+[node name="Ores" type="Node2D" parent="." unique_id=589641459]
+position = Vector2(506, 67)
+
+[node name="Boundaries" type="Node2D" parent="." unique_id=135992020]
+position = Vector2(-3, -648)
+
+[node name="floor" type="RigidBody2D" parent="Boundaries" unique_id=1241255303]
+position = Vector2(958, 1080)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/floor" unique_id=769990743]
+shape = SubResource("RectangleShape2D_kfraa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boundaries/floor" unique_id=2048970440]
+scale = Vector2(3.8164063, 0.06640625)
+texture = SubResource("NoiseTexture2D_axi3y")
+
+[node name="wall" type="RigidBody2D" parent="Boundaries" unique_id=1708543842]
+position = Vector2(0, 768)
+rotation = -1.5707964
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/wall" unique_id=2093143584]
+shape = SubResource("RectangleShape2D_lj67a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boundaries/wall" unique_id=1951076136]
+scale = Vector2(1.1823726, 0.06787358)
+texture = SubResource("NoiseTexture2D_kfraa")
+
+[node name="wall2" type="RigidBody2D" parent="Boundaries" unique_id=270790920]
+position = Vector2(1938, 781)
+rotation = -1.5707964
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/wall2" unique_id=1081933851]
+shape = SubResource("RectangleShape2D_lj67a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boundaries/wall2" unique_id=663066365]
+scale = Vector2(1.1823725, 0.067873955)
+texture = SubResource("NoiseTexture2D_28q7j")

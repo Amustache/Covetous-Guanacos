@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mn02th04bexy"]
+
+[ext_resource type="Texture2D" uid="uid://cowpynsw0toht" path="res://assets/art/stack/silver.png" id="1_wb8ef"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c03sg"]
+rough = true
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6cf6"]
+radius = 13.0
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=312410644]
+mass = 0.105
+physics_material_override = SubResource("PhysicsMaterial_c03sg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1655323172]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wb8ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=760348578]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_f6cf6")
+
+[node name="Ore" type="Node2D" parent="." unique_id=1888869878]

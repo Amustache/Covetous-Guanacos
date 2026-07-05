@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://n1e5rt2mmsi5"]
+
+[ext_resource type="Script" uid="uid://bba448y0q3gpy" path="res://garbage/main_game.gd" id="1_5dita"]
+[ext_resource type="Texture2D" uid="uid://b8n2tk8oyvfbq" path="res://assets/art/llama_eat_0.png" id="2_ikgw1"]
+[ext_resource type="Texture2D" uid="uid://btw5u8gc0v44l" path="res://assets/art/mountain.png" id="3_otp53"]
+[ext_resource type="Texture2D" uid="uid://ca23vdf7xgggf" path="res://assets/art/mountain_smaller.png" id="4_xbkbj"]
+[ext_resource type="Script" uid="uid://5ml0vmmpfoew" path="res://garbage/mountain_button.gd" id="5_i2gpw"]
+[ext_resource type="Script" uid="uid://b7ghfje2jp2nw" path="res://scripts/ore_generator.gd" id="6_ji771"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2op2"]
+atlas = ExtResource("2_ikgw1")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rdsr"]
+atlas = ExtResource("2_ikgw1")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipu61"]
+atlas = ExtResource("2_ikgw1")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygxny"]
+atlas = ExtResource("2_ikgw1")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wi4c7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2op2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rdsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipu61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygxny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygxny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygxny"]
+size = Vector2(1899, 45)
+
+[node name="MainGame" type="Control" unique_id=1008828742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5dita")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1727613024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=2140767968]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1585883048]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=686217113]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ClickerZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=618233757]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone" unique_id=925039379]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer" unique_id=1572491754]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GardenZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer" unique_id=1838364335]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ShopZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer" unique_id=785171471]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StackZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer" unique_id=472218095]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ClickerZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer" unique_id=176435797]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer/ClickerZone" unique_id=1489075377]
+position = Vector2(185, 702)
+sprite_frames = SubResource("SpriteFrames_wi4c7")
+
+[node name="MountainZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer" unique_id=1712854637]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer/MountainZone" unique_id=1007303313]
+layout_mode = 2
+texture_normal = ExtResource("3_otp53")
+texture_pressed = ExtResource("4_xbkbj")
+script = ExtResource("5_i2gpw")
+
+[node name="StatsZone" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1761618724]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone" unique_id=1149627009]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer" unique_id=1719122073]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GardenStats" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer" unique_id=1506411979]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer/GardenStats" unique_id=1464424209]
+layout_mode = 2
+text = "Garden:
+TODO"
+horizontal_alignment = 1
+
+[node name="ShopStats" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer" unique_id=1960162059]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer/ShopStats" unique_id=1636489166]
+layout_mode = 2
+text = "Condor:
+TODO"
+horizontal_alignment = 1
+
+[node name="StackStats" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer" unique_id=2119386545]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer/StackStats" unique_id=1102965512]
+layout_mode = 2
+text = "placeholder"
+horizontal_alignment = 1
+
+[node name="ClickerStats" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer" unique_id=456272715]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer/ClickerStats" unique_id=196022487]
+layout_mode = 2
+text = "placeholder"
+horizontal_alignment = 1
+
+[node name="MountainStats" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer" unique_id=2103490575]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatsZone/MarginContainer/HBoxContainer/MountainStats" unique_id=1535211664]
+layout_mode = 2
+text = "placeholder"
+horizontal_alignment = 1
+
+[node name="Physics" type="Node2D" parent="." unique_id=1969453758]
+
+[node name="OreGenerator2" type="Node2D" parent="Physics" unique_id=206108639]
+position = Vector2(965, -204)
+script = ExtResource("6_ji771")
+force = 500
+
+[node name="OreGenerator1" type="Node2D" parent="Physics" unique_id=2127750952]
+position = Vector2(1704, 301)
+script = ExtResource("6_ji771")
+force = 500
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Physics" unique_id=2139019322]
+position = Vector2(956, 850)
+physics_material_override = SubResource("PhysicsMaterial_ygxny")
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Physics/RigidBody2D" unique_id=1490059738]
+position = Vector2(-23.5, 12.5)
+shape = SubResource("RectangleShape2D_ygxny")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=313440966]
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClickerZone/MarginContainer/HBoxContainer/MountainZone/TextureButton" to="." method="_on_mountain_button_pressed"]

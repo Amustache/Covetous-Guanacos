@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vsuypw65ru0r"]
+
+[ext_resource type="Texture2D" uid="uid://btw5u8gc0v44l" path="res://assets/art/mountain.png" id="1_kckgs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kckgs"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axi3y"]
+radius = 90.005554
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=631871100]
+mass = 0.4
+physics_material_override = SubResource("PhysicsMaterial_kckgs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1526827966]
+texture = ExtResource("1_kckgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=617808116]
+shape = SubResource("CircleShape2D_axi3y")
